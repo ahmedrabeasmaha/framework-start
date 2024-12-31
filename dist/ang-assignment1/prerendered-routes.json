@@ -1,8 +1,0 @@
-{
-  "routes": {
-    "/framework-start": {},
-    "/framework-start/about": {},
-    "/framework-start/contact": {},
-    "/framework-start/portfolio": {}
-  }
-}
