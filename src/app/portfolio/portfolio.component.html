@@ -1,0 +1,48 @@
+<div class="portfolio mb-4">
+  <div class="pt-4">
+    <div class="text-center pt-4" style="color: rgb(44, 62, 80)">
+      <h2 class="text-uppercase mb-3 fs-1 fw-bolder">portfolio component</h2>
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <div class="line me-3" style="background-color: rgb(44, 62, 80)"></div>
+        <fa-icon [icon]="faStar"></fa-icon>
+        <div class="line ms-3" style="background-color: rgb(44, 62, 80)"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row g-5">
+        @for (img of this.images; track $index) {
+        <div class="col-lg-4 col-md-6">
+          <div
+            (click)="showInModal($index)"
+            class="rounded-3 overflow-hidden position-relative"
+          >
+            <img [id]="img.id" alt="" class="w-100 rounded-3" [src]="img.url" />
+            <div
+              class="layer position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center"
+            >
+              <fa-icon [icon]="faPlus" class="icon fa-6x"></fa-icon>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div
+    (click)="hideModal()"
+    class="model position-fixed start-0 w-100 top-0 h-100 bg-primary bg-opacity-25 d-flex justify-content-center align-items-center"
+    [class.d-none]="showModal"
+  >
+    <fa-icon
+      (click)="prevImg($event)"
+      [icon]="faChevronLeft"
+      class="icon fa-6x"
+    ></fa-icon>
+    <img alt="" [src]="currentImg" (click)="$event.stopPropagation()" />
+    <fa-icon
+      (click)="nextImg($event)"
+      [icon]="faChevronRight"
+      class="icon fa-6x"
+    ></fa-icon>
+  </div>
+</div>

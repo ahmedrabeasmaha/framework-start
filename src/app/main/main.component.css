@@ -1,0 +1,13 @@
+img {
+  width: 250px;
+}
+.home {
+  margin-top: 86px;
+  background: #1abc9c;
+  height: 100vh;
+}
+.line {
+  height: 4px;
+  width: 80px;
+  background: white;
+}
