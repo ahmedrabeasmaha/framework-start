@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: '/framework-start/',
   entryPoints: {
     '': () => import('./main.server.mjs')
   },
